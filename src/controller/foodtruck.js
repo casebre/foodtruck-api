@@ -9,6 +9,9 @@ export default({config, db}) => {
     api.post('/add', (req, res) => {
         let foodTruck = new FoodTruck();
         foodTruck.name = req.body.name;
+        foodTruck.foodTye = req.body.foodType;
+        foodTruck.averageCost = req.body.averageCost;
+        foodTruck.geometry = req.body.geometry;
 
         foodTruck.save(err => {
             if(err) {
